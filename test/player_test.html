@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Video Test</title>
+</head>
+
+<body>
+    <iframe id="yt-video" src="https://www.youtube.com/embed/Xa0Q0J5tOP0?enablejsapi=1"></iframe>
+    <script type="text/javascript" src="http://www.youtube.com/iframe_api"></script>
+    <script type="text/javascript">
+        var player;
+        
+        function onYouTubeIframeAPIReady() {
+
+            player = new YT.Player('yt-video', {
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange,
+                    'onError': onPlayerError
+                }
+                
+            });
+                                    
+        }
+        
+        function onPlayerReady(event) {
+                    
+            alert('PLAYER_READY');
+
+        }
+
+        function onPlayerStateChange(event) {
+
+            playerState = event.data;
+            
+            switch (playerState) {
+
+                case YT.PlayerState.ENDED:
+                    alert('ENDED');
+                    break;
+
+                case YT.PlayerState.PLAYING:
+                    alert('PLAYING');
+                    break;
+
+                case YT.PlayerState.PAUSED:
+                    alert('PAUSED');
+                    break;
+
+                case YT.PlayerState.BUFFERING:
+                   alert('BUFFERING');
+                    break;
+
+            }
+
+        }
+        
+        function onPlayerError(event) {
+            alert('ERROR_' + event.data);
+        }
+    </script>
+</body>
+
+</html>
