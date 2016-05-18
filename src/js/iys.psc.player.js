@@ -9,11 +9,11 @@ var videoPlayerModule = (function (window, document) {
         $playerAlert,
         player,
         playerState,
-        isiOS;
+        probablyIsMobile;
 
     videoPlayerModuleObj.initialize = function () {
 
-        isiOS = (window.navigator.userAgent.match(/iPhone|iPad|iPod/i)) ? true : false;
+        probablyIsMobile = common.probablyIsMobile();
 
         $main = $('#main'),
             $videoContainer = $('#video-container'),
@@ -45,7 +45,7 @@ var videoPlayerModule = (function (window, document) {
     function loadPlayer() {
 
         loadPlayerApi();
-        
+
         window.onYouTubeIframeAPIReady = function () {
 
             player = new YT.Player('yt-video', {
@@ -67,10 +67,10 @@ var videoPlayerModule = (function (window, document) {
             });
 
         }
-        
+
         showPlayerAlert('Espere un momento por favor.');
         $videoContainer.find('.video-player-watch-control').fadeOut(400);
-        
+
     }
 
     function loadPlayerApi() {
@@ -82,11 +82,11 @@ var videoPlayerModule = (function (window, document) {
 
     }
 
-    function onPlayerReady(event) {        
-        
+    function onPlayerReady(event) {
+
         hidePlayerAlert();
-        
-        if (!isiOS)
+
+        if (!probablyIsMobile)
             event.target.playVideo();
 
         else
@@ -122,25 +122,25 @@ var videoPlayerModule = (function (window, document) {
     }
 
     function onPlayerError(event) {
-        
+
         showPlayerAlert('Ha ocurrido un error cargando la transmisi&oacute;n en vivo. Favor intente m&aacute;s tarde. (Error: ' + event.data + ')');
 
     }
-    
+
     function showPlayerAlert(htmlMessage) {
-        
+
         $playerAlert.fadeIn(400, function () {
             $(this).html(htmlMessage)
         });
-        
+
     }
-    
+
     function hidePlayerAlert() {
-        
+
         $playerAlert.fadeOut(400, function () {
             $(this).html(null)
-        });        
-        
+        });
+
     }
 
     return videoPlayerModuleObj;

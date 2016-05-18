@@ -86,6 +86,17 @@ var common = (function (window, document) {
 
         };
 
+    commonObj.probablyIsMobile = function () {
+
+        var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
+            isACommonMobileOS = (window.navigator.userAgent.match(/iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i)) ? true : false;
+
+        if (viewportWidth <= 1280 && isACommonMobileOS) return true
+
+        return false;
+
+    }
+
     return commonObj;
 
 })(window, document);
