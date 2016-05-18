@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var common = (function (window, document) {
 
@@ -7,22 +7,22 @@ var common = (function (window, document) {
     commonObj.getTimestamp = function () {
 
         var currentdate = new Date(),
-            timestamp = currentdate.getDate() + "" + (currentdate.getMonth() + 1) + "" + currentdate.getFullYear() + "" + currentdate.getHours() + "" + currentdate.getMinutes() + "" + currentdate.getSeconds();
+            timestamp = currentdate.getDate() + '' + (currentdate.getMonth() + 1) + '' + currentdate.getFullYear() + '' + currentdate.getHours() + '' + currentdate.getMinutes() + '' + currentdate.getSeconds();
 
         return timestamp;
 
     },
 
-        commonObj.getProtocol = function () {
+        commonObj.getContextProtocol = function () {
 
             var protocol = /^http:/.test(document.location) ? 'http' : 'https';
             return protocol;
-            
+
         },
 
         commonObj.loadScript = function (id, url) {
 
-            var s = "script",
+            var s = 'script',
                 js = document.createElement(s),
                 bfjs = document.body.getElementsByTagName(s)[0],
                 src = url;
@@ -33,7 +33,7 @@ var common = (function (window, document) {
 
         },
 
-        //Fisher–Yates Shuffle 
+        //Fisher–Yates Shuffle.
         commonObj.shuffle = function (array) {
 
             var i = array.length,
@@ -44,7 +44,7 @@ var common = (function (window, document) {
 
                 j = Math.floor(Math.random() * (i + 1));
 
-                // swap randomly chosen element with current element
+                // Swap randomly chosen element with current element.
                 temp = array[i];
                 array[i] = array[j];
                 array[j] = temp;
@@ -60,14 +60,14 @@ var common = (function (window, document) {
             var d = new Date();
             d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
 
-            var expires = "expires=" + d.toUTCString();
-            document.cookie = cname + "=" + cvalue + "; " + expires;
+            var expires = 'expires=' + d.toUTCString();
+            document.cookie = cname + '=' + cvalue + '; ' + expires;
 
         },
 
         commonObj.getCookie = function (cname) {
 
-            var name = cname + "=",
+            var name = cname + '=',
                 ca = document.cookie.split(';');
 
             for (var i = 0; i < ca.length; i++) {
@@ -82,7 +82,7 @@ var common = (function (window, document) {
                 }
             }
 
-            return "";
+            return '';
 
         };
 

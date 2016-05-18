@@ -228,7 +228,7 @@
         width: 940px;        
     }
     
-    #video-container .video-thumbnail .wait-message {
+    #player-alert-message {
         font-size: 15px;    
     }
     

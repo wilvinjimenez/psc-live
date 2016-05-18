@@ -15,7 +15,7 @@ module.exports = function (grunt) {
             },
             build: {
                 files: {
-                    'site/js/iys.psc.live.scripts.min.js': ['src/js/iys.psc.ads.js', 'src/js/iys.psc.donations.js', 'src/js/iys.psc.common.js', 'src/js/iys.psc.main.js', 'src/js/iys.psc.player.js', 'src/js/iys.psc.social.js', 'src/js/iys.psc.subscriptions.js'],
+                    'site/js/iys.psc.live.scripts.min.js': ['src/js/iys.psc.common.js', 'src/js/iys.psc.donations.js', 'src/js/iys.psc.ads.js', 'src/js/iys.psc.player.js', 'src/js/iys.psc.social.js', 'src/js/iys.psc.subscriptions.js', 'src/js/iys.psc.main.js'],
                     'site/js/iys.psc.live.ads.definition.min.js': 'src/js/iys.psc.ads.definition.js'
                 }
             }
@@ -44,9 +44,16 @@ module.exports = function (grunt) {
                 tasks: ['cssc']
             }
         },
+        
+        'http-server':{
+            'dev' : {
+                port: 7000,
+                root: 'site'
+            }
+        }
 
     });
-
+    
     grunt.registerTask('default', []);
 
 };

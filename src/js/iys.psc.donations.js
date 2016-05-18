@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var donationsModule = (function (window, document) {
 
@@ -12,30 +12,30 @@ var donationsModule = (function (window, document) {
 
     donationsModuleObj.initialize = function () {
 
-        $donationsForm = $("#donations-form"),
-            $amountsBtns = $donationsForm.find(".amount-btn"),
-            $donationAmount = $("#donation-amount"),
-            $donationAmountValue = $("#donation-amount-value"),
-            $donateBtn = $("#donate-btn"),
-            $formAlert = $("#donations-form-alert");
+        $donationsForm = $('#donations-form'),
+            $amountsBtns = $donationsForm.find('.amount-btn'),
+            $donationAmount = $('#donation-amount'),
+            $donationAmountValue = $('#donation-amount-value'),
+            $donateBtn = $('#donate-btn'),
+            $formAlert = $('#donations-form-alert');
 
-        $amountsBtns.on("click", function (e) {
+        $amountsBtns.on('click', function (e) {
 
             e.preventDefault();
             var $btn = $(this);
 
             $formAlert.hide();
-            $amountsBtns.removeClass("selected");
+            $amountsBtns.removeClass('selected');
 
             if (!$btn.find($donationAmount).length > 0)
                 $donationAmount.val(null);
 
-            $donationAmountValue.val(parseInt($btn.text().split("$")[1].trim()));
-            $btn.addClass("selected");
+            $donationAmountValue.val(parseInt($btn.text().split('$')[1].trim()));
+            $btn.addClass('selected');
 
         }),
 
-            $donationAmount.on("keydown", function (e) {
+            $donationAmount.on('keydown', function (e) {
 
                 e = (e) ? e : window.event;
                 var charCode = (e.which) ? e.which : e.keyCode,
@@ -46,21 +46,21 @@ var donationsModule = (function (window, document) {
 
                 $donationAmountValue.val($input.val());
 
-            }).on("keyup", function (e) {
+            }).on('keyup', function (e) {
 
                 var $input = $(this);
                 $donationAmountValue.val(parseInt($input.val()));
 
-            }).on("blur", function () {
+            }).on('blur', function () {
 
                 var $input = $(this);
 
                 if (!$input.val())
-                    $input.closest(".amount-btn").removeClass("selected");
+                    $input.closest('.amount-btn').removeClass('selected');
 
             }),
 
-            $donateBtn.on("click", function () {
+            $donateBtn.on('click', function () {
 
                 if (parseInt($donationAmountValue.val())) {
 

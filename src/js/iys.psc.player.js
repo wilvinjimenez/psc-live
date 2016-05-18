@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var videoPlayerModule = (function (window, document) {
 
@@ -6,6 +6,7 @@ var videoPlayerModule = (function (window, document) {
         $main,
         $videoContainer,
         $videoThumbnail,
+        $playerAlert,
         player,
         playerState,
         isiOS;
@@ -14,24 +15,30 @@ var videoPlayerModule = (function (window, document) {
 
         isiOS = (window.navigator.userAgent.match(/iPhone|iPad|iPod/i)) ? true : false;
 
-        $main = $("#main"),
-            $videoContainer = $("#video-container"),
-            $videoThumbnail = $videoContainer.find(".video-thumbnail");
+        $main = $('#main'),
+            $videoContainer = $('#video-container'),
+            $videoThumbnail = $videoContainer.find('.video-thumbnail'),
+            $playerAlert = $('#player-alert-message');
 
         setThumbnailVideoPreviewImage();
 
-        $videoThumbnail.on("mouseenter mouseleave", function () {
-            $(this).toggleClass("active");
+        $videoThumbnail.on('mouseenter mouseleave', function () {
+            $(this).toggleClass('active');
         });
 
-        loadPlayer();
+        $('#video-play-btn').on('click', function (e) {
+
+            e.preventDefault();
+            loadPlayer();
+
+        });
 
     };
 
     function setThumbnailVideoPreviewImage() {
 
-        var previewImageUrl = "url(img/player-live-preview-image.jpg" + "?" + common.getTimestamp() + ")";
-        $videoThumbnail.css("background-image", previewImageUrl);
+        var previewImageUrl = 'url(img/player-live-preview-image.jpg' + '?' + common.getTimestamp() + ')';
+        $videoThumbnail.css('background-image', previewImageUrl);
 
     }
 
@@ -42,52 +49,55 @@ var videoPlayerModule = (function (window, document) {
         window.onYouTubeIframeAPIReady = function () {
 
             player = new YT.Player('yt-video', {
-                
+                videoId: $('#video-id').val(),
+                playerVars: {
+                    enablejsapi: 1,
+                    rel: 0,
+                    showinfo: 0,
+                    hl: "es",
+                    color: 'white',
+                    origin: document.domain
+                },
                 events: {
-                    "onReady": onPlayerReady,
-                    "onStateChange": onPlayerStateChange,
-                    "onError": onPlayerError
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange,
+                    'onError': onPlayerError
                 }
-                
-            });
-                        
-        }
 
+            });
+
+        }
+        
+        showPlayerAlert('Espere un momento por favor.');
+        $videoContainer.find('.video-player-watch-control').fadeOut(400);
+        
     }
 
     function loadPlayerApi() {
 
-        var url = common.getProtocol() + "://www.youtube.com/iframe_api",
-            scriptId = "yt-wjs";
+        var url = 'https://www.youtube.com/iframe_api',
+            scriptId = 'yt-wjs';
 
         common.loadScript(scriptId, url);
 
     }
 
-    function onPlayerReady(event) {
-                
-        $videoContainer.find(".wait-message").fadeOut(300, function () {
-            $videoContainer.find(".video-player-watch-control").fadeIn(200);
-        });
+    function onPlayerReady(event) {        
+        
+        hidePlayerAlert();
+        
+        if (!isiOS)
+            event.target.playVideo();
 
-        $("#video-play-btn").on('click', function (e) {
-
-            e.preventDefault();
-            
-            if (!isiOS)
-                event.target.playVideo();
-
-            else
-                $videoThumbnail.fadeOut();
-
-        });
+        else
+            $videoThumbnail.fadeOut();
 
     }
 
     function onPlayerStateChange(event) {
 
         playerState = event.data;
-        var $theaterModeOverlay = $main.find(".theater-mode-overlay");
+        var $theaterModeOverlay = $main.find('.theater-mode-overlay');
 
         switch (playerState) {
 
@@ -110,9 +120,27 @@ var videoPlayerModule = (function (window, document) {
         }
 
     }
-    
+
     function onPlayerError(event) {
-        alert(event.data);
+        
+        showPlayerAlert('Ha ocurrido un error cargando la transmisi&oacute;n en vivo. Favor intente m&aacute;s tarde. (Error: ' + event.data + ')');
+
+    }
+    
+    function showPlayerAlert(htmlMessage) {
+        
+        $playerAlert.fadeIn(400, function () {
+            $(this).html(htmlMessage)
+        });
+        
+    }
+    
+    function hidePlayerAlert() {
+        
+        $playerAlert.fadeOut(400, function () {
+            $(this).html(null)
+        });        
+        
     }
 
     return videoPlayerModuleObj;

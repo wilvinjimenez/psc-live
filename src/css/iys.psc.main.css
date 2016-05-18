@@ -113,16 +113,17 @@ body {
     opacity: .80;
 }
 
-#video-container .video-thumbnail .wait-message {
+#player-alert-message {
+    display: none;
     position: relative;
     margin: 18px 0 0;
+    padding: 0 20px;
     z-index: 4;
     font-family: 'PT Serif', serif;
     color: #d5d5d5;    
 }
 
 #video-container .video-player-watch-control {
-    display: none;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -388,4 +389,11 @@ footer .social-contacts a:active {
 
 .social-contacts .ig-link {
     background-image: url(../img/social-ig-icon.png);
+}
+
+.solid-blank .modal-backdrop.in {
+    background-color: #fff;
+    -moz-opacity: 1;
+    opacity: 1;
+    filter: alpha(opacity=100);
 }
