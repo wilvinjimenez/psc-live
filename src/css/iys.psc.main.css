@@ -209,7 +209,7 @@ body {
 
 #random-ads .ad a,
 #content .static-ads .ad a {
-    display: block;
+    display: inline-block;
 }
 
 #content .static-ads .ad {
@@ -226,7 +226,7 @@ body {
 #tw-widget {
     display: none;
     margin: 32px auto 0;
-    max-width: 380px;
+    max-width: 240px;
 }
 
 #tw-widget .widget-heading {

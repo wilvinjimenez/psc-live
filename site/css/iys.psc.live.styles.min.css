@@ -23,10 +23,10 @@ body{min-width:320px;text-align:center;}
 #random-ads.section{position:relative;overflow:hidden;padding:0;}
 #random-ads .ad{position:absolute;}
 #random-ads .ad img,#content .static-ads .ad img{width:100%;}
-#random-ads .ad a,#content .static-ads .ad a{display:block;}
+#random-ads .ad a,#content .static-ads .ad a{display:inline-block;}
 #content .static-ads .ad{margin:20px 0 0;}
 #random-ads.section,#content #social{margin-bottom:20px;}
-#tw-widget{display:none;margin:32px auto 0;max-width:380px;}
+#tw-widget{display:none;margin:32px auto 0;max-width:240px;}
 #tw-widget .widget-heading{margin-top:0;font-size:24px;text-align:left;}
 #tw-widget .widget-heading a{display:inline-block;padding:0 46px 0 0;background-image:url(../img/twitter-widget-icon.png);background-position:right;background-repeat:no-repeat;color:#3b94d9;}
 #tw-widget .widget-heading a:hover{background-position:158px center;text-decoration:none;color:#e91c23;-webkit-transition:all 0.2s ease;-moz-transition:all 0.2s ease;-ms-transition:all 0.2s ease;-o-transition:all 0.2s ease;transition:all 0.2s ease;}
@@ -50,6 +50,7 @@ footer .social-contacts a:hover,footer .social-contacts a:focus,footer .social-c
 .social-contacts .ig-link{background-image:url(../img/social-ig-icon.png);}
 .solid-blank .modal-backdrop.in{background-color:#fff;-moz-opacity:1;opacity:1;filter:alpha(opacity=100);}
 @media (min-width: 380px){#content .static-ads .ad img{width:auto;}
+#tw-widget{max-width:296px;}
 #donations .donations-form-container,#donate-btn{width:306px;}
 }
 @media (min-width: 768px){#content>section>p{font-size:16px;}
@@ -72,7 +73,7 @@ footer .social-contacts a:hover,footer .social-contacts a:focus,footer .social-c
 #content>section>.section-heading{font-size:48px;}
 #content>section>p{max-width:820px;}
 #content .static-ads .ad{margin:0;}
-#content .static-ads .ad a,#content .static-ads .ad+.ad a{display:block;float:none;width:auto;}
+#content .static-ads .ad a,#content .static-ads .ad+.ad a{float:none;width:auto;}
 #tw-widget{max-width:540px;}
 #tw-widget .widget-heading{margin-bottom:14px;font-size:28px;}
 #tw-widget .widget-heading a:hover{background-position:184px center;}

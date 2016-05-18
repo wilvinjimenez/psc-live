@@ -6,6 +6,12 @@
         width: auto;
     }
     
+    /* Social section */
+
+    #tw-widget {
+        max-width: 296px;
+    }
+    
     /* Donations section */
 
     #donations .donations-form-container,
@@ -123,7 +129,6 @@
     
     #content .static-ads .ad a,
     #content .static-ads .ad + .ad a {
-        display: block;
         float: none;        
         width: auto;
     }
