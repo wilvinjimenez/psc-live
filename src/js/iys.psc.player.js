@@ -53,9 +53,8 @@ var videoPlayerModule = (function (window, document) {
                 playerVars: {
                     enablejsapi: 1,
                     rel: 0,
-                    showinfo: 0,
                     hl: "es",
-                    color: 'white',
+                    modestbranding: 1,
                     origin: document.domain
                 },
                 events: {
