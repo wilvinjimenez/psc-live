@@ -12,9 +12,12 @@ var subscriptionsModule = (function (window, document) {
         $broadcastPeopleAmount,
         $newsletterYes,
         $newsletterNo,
-        signUpFormIsValid = true;
+        signUpFormIsValid,
+        $formErrorMessage;
 
     subscriptionsModuleObj.initialize = function () {
+
+        signUpFormIsValid = true;
 
         $subscriptionModal = $('#subscription-modal'),
             $firstName = $('#first-name'),
@@ -25,6 +28,7 @@ var subscriptionsModule = (function (window, document) {
             $broadcastPeopleAmount = $('#broadcast-people-amount'),
             $newsletterYes = $('#newsletter-yes'),
             $newsletterNo = $('#newsletter-no'),
+            $formErrorMessage = $('#subscriptions-form-alert');
 
             $subscriptionModal.on('show.bs.modal hidden.bs.modal', function (e) {
                 $(document.body).toggleClass('solid-blank');
@@ -45,12 +49,19 @@ var subscriptionsModule = (function (window, document) {
 
         $('#sign-up-form').on('submit', function () {
 
-            var requiredFields = [$firstName, $lastName, $emailAddress, $countryName, $broadcastPeopleAmount];
+            var requiredFields = [$firstName, $lastName, $emailAddress, $countryName, $broadcastPeopleAmount],
+                textFields = [$firstName, $lastName, $churchName],
+                numericFields = [$broadcastPeopleAmount],
+                emailFields = [$emailAddress];
 
             validateRequiredFields(requiredFields);
-            validateEmailField($emailAddress);
-            validateTextField($churchName);
-            validateNumericField($broadcastPeopleAmount);
+            validateTextField(textFields);
+            validateNumericField(numericFields);
+            validateEmailField(emailFields);
+
+            if (!signUpFormIsValid) {
+                $formErrorMessage.fadeIn();
+            }
 
             return signUpFormIsValid;
 
@@ -70,36 +81,70 @@ var subscriptionsModule = (function (window, document) {
 
     };
 
-    function validateRequiredFields(fieldsList) {
+    function validateRequiredFields(fields) {
+
+        $.each(fields, function (i, v) {
+
+            if (this.val() === '') {
+
+                signUpFormIsValid = false;
+                this.closest('.form-group').addClass('has-error');
+
+            }
+
+        });
 
     }
 
-    function validateEmailField($emailField) {
+    function validateEmailField(fields) {
 
-        var regEx = /^([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}$/,
-            fieldValue = $emailField.val();
+        $.each(fields, function (i, v) {
 
-        signUpFormIsValid = (regEx.test(fieldValue)) ? signUpFormIsValid : false;
+            var regEx = /^(([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,})?$/;
 
-    }
+            if (!regEx.test(this.val())) {
 
-    function validateTextField($textField) {
+                signUpFormIsValid = false;
+                this.closest('.form-group').addClass('has-error');
 
-        var fieldValue = $textField.val(),
-            signUpFormIsValid = (!$.isNumeric(fieldValue)) ? signUpFormIsValid : false;
+            }
 
-        if (!signUpFormIsValid)
-            $emailField.class("has-error");
+        });
 
     }
 
-    function validateNumericField($numericField) {
+    function validateTextField(fields) {
 
-        var fieldValue = $numericField.val(),
-            signUpFormIsValid = ($.isNumeric(fieldValue)) ? signUpFormIsValid : false;
+        $.each(fields, function (i, v) {
 
-        if (!signUpFormIsValid)
-            $emailField.class("has-error");
+            var fieldValue = this.val();
+
+            if ($.isNumeric(fieldValue) && fieldValue !== '') {
+
+                signUpFormIsValid = false;
+                this.closest('.form-group').addClass('has-error');
+
+            }
+
+        });
+
+    }
+
+
+    function validateNumericField(fields) {
+
+        $.each(fields, function (i, v) {
+
+            var fieldValue = this.val();
+
+            if ($.isNumeric(fieldValue) && fieldValue !== '') {
+
+                signUpFormIsValid = false;
+                this.closest('.form-group').addClass('has-error');
+
+            }
+
+        });
 
     }
 

@@ -11,6 +11,8 @@ module.exports = function (grunt) {
 
         uglify: {
             options: {
+                beutify: true,
+                mangle: false,
                 banner: '<%= banner %>' + '\n'
             },
             build: {
