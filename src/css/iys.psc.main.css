@@ -278,8 +278,7 @@ body {
 #donations .amount-btn:hover,
 #donations .amount-btn:focus,
 #donations .amount-btn:active,
-#donations .amount-btn.selected,
-#donate-btn {
+#donations .amount-btn.selected {
     border-color: #e91c23;
     background: #e91c23;    
     text-decoration: none;
@@ -289,18 +288,15 @@ body {
 #donate-btn {
     width: 100%;
     margin: 20px 0 0;
-    padding: 8px 22px;
-    border: 0;
-    -webkit-appearance: none;   
-    -webkit-border-radius: 0; 
-    -moz-border-radius: 0;
-    border-radius: 0;    
+    padding: 7px 22px;
     font-size: 16px;
+    font-weight: 600;
 }
 
 #donate-btn:hover,
 #donate-btn:focus,
 #donate-btn:active {
+    border-color: #454545;
     background: #454545;
 }
 
@@ -335,6 +331,87 @@ body {
 #donations-form-alert {
     display: none;
     margin: 10px 0;
+}
+
+/* Subscriptions section */
+
+#subscriptions {
+    position: relative;
+    max-width: 380px;
+    margin: 0 auto;
+    padding: 6% 20px;
+    text-align: left;
+    color: #333;
+}
+
+#subscriptions .psc-logo {
+    width: 280px;
+    height: 103px;
+    margin: 0;
+    background-image: url(../img/psc-logo.png);
+    text-indent: -9999px;
+}
+
+#subscriptions .subscriptions-info {
+    margin: 0 0 0 70px;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 300;
+    color: #212121;
+}
+
+#subscriptions .subscriptions-info em {
+    font-style: normal;
+    font-weight: 400;
+}
+
+
+#sign-up-form {
+    margin: 20px 0 0;   
+}
+
+#sign-up-form label {
+    font-weight: 400;
+}
+
+#sign-up-form .form-control {
+    height: 36px;
+    padding-top: 6px;
+    padding-bottom: 10px;
+    font-size: inherit;
+}
+
+#sign-up-form .highlighted label {
+    font-weight: 600;
+}
+
+#sign-up-form .optional label {
+    font-weight: 300;
+}
+
+#sign-up-form .form-btn-group .btn {
+    width: 100%;
+    padding: 8px 22px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#sign-up-form .form-btn-group .btn {
+    margin-top: 20px;
+}
+
+#sign-up-form .form-btn-group .btn + .btn {
+    margin-top: 10px;
+}
+
+.btn.btn-borderless {
+    border: 0;
+    font-weight: 600;
+}
+
+#subscriptions-form-alert {
+    display: none;
+    text-align: center;
 }
 
 /* Footer */

@@ -48,33 +48,44 @@
     <a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
     <!-- Subscription -->
     <div id="subscription-modal" class="modal bs-example-modal-lg" tabindex="-1" role="dialog">
-        <div class="modal-dialog">
-            <div>
-                <div id="mc_embed_signup">
-                    <form action="http://integridadysabiduria.us10.list-manage.com/subscribe/post?u=968f8c742a9070543f41e4e79&amp;id=140fb1feaa"
-                        method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
-                        novalidate>
-                        <div id="mc_embed_signup_scroll">
-                            <div class="mc-field-group">
-                                <label for="mce-FIRSTNAME">Nombres </label>
-                                <input type="text" value="" name="FIRSTNAME" class="required" id="mce-FIRSTNAME">
-                            </div>
-                            <div class="mc-field-group">
-                                <label for="mce-LASTNAME">Apellidos </label>
-                                <input type="text" value="" name="LASTNAME" class="required" id="mce-LASTNAME">
-                            </div>
-                            <div class="mc-field-group">
-                                <label for="mce-EMAIL">Email </label>
-                                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-                            </div>
-                            <div class="mc-field-group">
-                                <label for="mce-CHURCH">Iglesia </label>
-                                <input type="text" value="" name="CHURCH" class="required" id="mce-CHURCH">
-                            </div>
-                            <div class="mc-field-group">
-                                <label for="mce-COUNTRY">País </label>
-                                <select name="COUNTRY" class="required" id="mce-COUNTRY">
-                                        <option value="">- Selecciona -</option>
+        <div id="subscriptions">
+            <div class="subscriptions-heading">
+                <h2 class="psc-logo">Conferencia Por Su Causa</h2>
+                <p class="subscriptions-info"><em>La Iglesia Prevalecerá PSC'16</em>. Morbi mollis felis eget neque finibus, eget mattis metus.
+                </p>
+            </div>
+            <form id="sign-up-form" action="http://integridadysabiduria.us10.list-manage.com/subscribe/post" method="post" target="_blank" class="form-horizontal" novalidate>
+                <input type="hidden" name="u" value="968f8c742a9070543f41e4e79">
+                <input type="hidden" name="id" value="140fb1feaa">
+                <div class="form-group">
+                    <label for="first-name" class="col-lg-4 control-label">Nombres</label>
+                    <div class="col-lg-8">
+                        <input type="text" name="MERGE1" id="first-name" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="last-name" class="col-lg-4 control-label">Apellidos</label>
+                    <div class="col-lg-8">
+                        <input type="text" name="MERGE2" id="last-name" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email-address" class="col-lg-4 control-label">Email</label>
+                    <div class="col-lg-8">
+                        <input type="email" name="MERGE0" id="email-address" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="church-name" class="col-lg-4 control-label optional">Iglesia</label>
+                    <div class="col-lg-8">
+                        <input type="text" name="MERGE3" id="church-name" class="form-control" placeholder="(opcional)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="country-name" class="col-lg-4 control-label">Pa&iacute;s</label>
+                    <div class="col-lg-8">
+                        <select name="MERGE7" id="country-name" class="form-control">
+                                        <option value="">- Seleccionar -</option>
                                         <option value="United States of America">United States of America</option>
                                         <option value="Aaland Islands">Aaland Islands</option>
                                         <option value="Afghanistan">Afghanistan</option>
@@ -325,37 +336,34 @@
                                         <option value="Zambia">Zambia</option>
                                         <option value="Zimbabwe">Zimbabwe</option>
                                     </select>
-                            </div>
-                            <div class="mc-field-group">
-                                <label for="mce-CITY">Ciudad </label>
-                                <input type="text" value="" name="CITY" class="required" id="mce-CITY">
-                            </div>
-                            <div class="mc-field-group size1of2">
-                                <label for="mce-NPEOPLE">Cantidad de participantes </label>
-                                <input type="number" name="NPEOPLE" class="required" value="" id="mce-NPEOPLE">
-                            </div>
-                            <div class="mc-field-group">
-                                <label for="mce-COMMENTS">Comentarios </label>
-                                <input type="text" value="" name="COMMENTS" class="" id="mce-COMMENTS">
-                            </div>
-                            <div class="mc-field-group input-group">
-                                <strong>Deseo recibir actualizaciones del evento </strong>
-                                <ul>
-                                    <li><input type="radio" value="Si" name="NEWSLETTER" id="mce-NEWSLETTER-0"><label for="mce-NEWSLETTER-0">Si</label></li>
-                                    <li><input type="radio" value="No" name="NEWSLETTER" id="mce-NEWSLETTER-1"><label for="mce-NEWSLETTER-1">No</label></li>
-                                </ul>
-                            </div>
-                            <div id="mce-responses" class="clear">
-                                <div class="response" id="mce-error-response" style="display:none"></div>
-                                <div class="response" id="mce-success-response" style="display:none"></div>
-                            </div>
-                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_968f8c742a9070543f41e4e79_140fb1feaa" tabindex="-1" value=""></div>
-                            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-                            <input id="btn-subscribe-later" type="button" value="Completar m&aacute;s tarde">
-                        </div>
-                    </form>
+
+
+
+                    </div>
                 </div>
-            </div>
+                <br>
+                <div class="form-group highlighted">
+                    <label for="webcast-people-amount" class="col-lg-4 control-label multiline-label">Cantidad de participantes en la transmisi&oacute;n</label>
+                    <div class="col-lg-8"><input type="number" name="MERGE5" size="7" id="broadcast-people-amount" class="form-control" min="1"
+                            autocomplete="off"></div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-offset-4 col-lg-8">
+                        <em>Deseo recibir actualizaciones de Por Su Causa:</em>
+                        <br>
+                        <label class="radio-inline"><input type="radio" value="Si" name="MERGE4" id="newsletter-yes" checked> <em>Si</em></label>
+                        <label class="radio-inline"><input type="radio" value="No" name="MERGE4" id="newsletter-no"> <em>No</em></label>
+                    </div>
+                </div>
+                <div id="subscriptions-form-alert" class="alert alert-danger" role="alert"></div>
+                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                    <input type="text" name="b_968f8c742a9070543f41e4e79_140fb1feaa" tabindex="-1">
+                </div>
+                <div class="form-btn-group clearfix">
+                    <input type="submit" value="UNIRME A LA TRANSMISI&Oacute;N" name="subscribe" id="btn-subscribe" class="btn btn-danger">
+                    <a href="#" id="btn-subscribe-later" class="btn btn-default btn-borderless" role="button">COMPLETAR M&Aacute;S TARDE</a>
+                </div>
+            </form>
         </div>
     </div>
     <!-- Content -->
@@ -515,7 +523,7 @@
                     <input type="hidden" name="item_number" value="PSC 2016 ">
                     <input type="hidden" name="currency_code" value="USD">
                     <input id="donation-amount-value" name="amount" type="hidden">
-                    <input id="donate-btn" name="submit" type="submit" value="QUIERO DONAR">
+                    <input id="donate-btn" class="btn btn-danger" name="submit" type="submit" value="QUIERO DONAR">
                 </form>
             </div>
         </section>

@@ -23,7 +23,7 @@
 
 @media (min-width: 768px) {
     
-    #content > section > p {
+    body {
         font-size: 16px;
     }
     
@@ -93,7 +93,8 @@
     }    
     
     #donate-btn,
-    #donations .amount-btn {
+    #donations .amount-btn,
+    #sign-up-form .form-btn-group .btn {
         font-size: 18px;
     }
     
@@ -101,6 +102,36 @@
         width: auto;
     }
     
+    /* Subscriptions section */
+
+    #subscriptions {
+        max-width: 620px;
+    }
+    
+    #subscriptions .psc-logo {
+        width: 462px;
+        height: 170px;
+        background-image: url(../img/psc-logo-lg.png);
+    }
+    
+    #subscriptions .subscriptions-info {
+        margin: 0 0 0 114px;     
+        font-size: 28px;   
+    }
+    
+    #subscriptions .form-horizontal .control-label {
+        margin-bottom: 5px;
+    }
+    
+    #sign-up-form {
+        max-width: 412px;
+        margin-left: 114px;
+    }
+    
+    #sign-up-form .form-control {
+        height: 40px;
+    }
+        
 }
 
 @media (min-width: 992px) {
@@ -148,13 +179,27 @@
         background-position: 184px center;
     }
     
+    /* Subscriptions section */
+
+    #subscriptions {
+        max-width: 680px;   
+    }
+    
+    #sign-up-form {
+        max-width: 466px;
+        margin-left: 114px;
+    }
+                
 }
 
 @media (min-width: 1200px) {
     
+    body {
+        font-size: 20px;
+    }
+    
     #content > section > p {
         max-width: 1020px;
-        font-size: 20px;
     }
     
     /* Main section */
@@ -192,12 +237,57 @@
     }    
     
     #donate-btn,
-    #donations .amount-btn {
+    #donations .amount-btn,
+    #sign-up-form .form-btn-group .btn {
         font-size: 20px;
     }
     
     #donate-btn {
         margin: 22px 0 0;
+    }
+    
+    /* Subscriptions section */
+    
+    #subscriptions {
+        max-width: 726px;
+        padding-top: 4%;
+        padding-bottom: 4%;
+    }
+    
+    #subscriptions .subscriptions-info {    
+        font-size: 34px;   
+    }
+    
+    #subscriptions .form-horizontal {        
+        margin: 46px 0 0;
+    }
+    
+    #subscriptions .form-horizontal .control-label {
+        margin-bottom: 0;
+    }
+    
+    #subscriptions .form-horizontal .multiline-label {
+        padding-top: 0;
+        line-height: 1.28;
+        font-size: 86%;
+    }
+        
+    #sign-up-form {
+        max-width: none;
+    }    
+    
+    #sign-up-form .form-group {
+        margin-bottom: 20px;
+    }
+    
+    #sign-up-form .form-control {
+        height: 46px;
+    }
+    
+    #sign-up-form .form-btn-group .btn {
+        float: right;
+        width: auto;
+        margin: 20px 0 0 20px !important;
     }
     
     /* Footer */
@@ -239,7 +329,7 @@
     
     footer {
         padding: 96px 20px 20px;
-        background-position:  center 60px;
+        background-position: center 60px;
     }
     
 }
@@ -273,6 +363,13 @@ only screen and (min-resolution: 2dppx) {
         background-size: 32px 26px;
     }
     
+    /* Subscriptions section */
+
+    #subscriptions .psc-logo {
+        background-image: url(../img/@2x/psc-logo@2x.png);
+        background-size: 280px 103px;
+    }
+    
     /* Footer */
 
     footer {
@@ -295,6 +392,23 @@ only screen and (min-resolution: 2dppx) {
         background-size: 16px 32px;
     }
     
+}
+
+@media 
+only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 768px),
+only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 768px),
+only screen and (-o-min-device-pixel-ratio: 2/1) and (min-width: 768px),
+only screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
+only screen and (min-resolution: 192dpi) and (min-width: 768px),
+only screen and (min-resolution: 2dppx) and (min-width: 768px) {
+    
+    /* Subscriptions section */
+    
+    #subscriptions .psc-logo {
+        background-image: url(../img/@2x/psc-logo-lg@2x.png);
+        background-size: 462px 170px;
+    } 
+
 }
 
 @media 

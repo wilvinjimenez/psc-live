@@ -4,9 +4,9 @@
 
     $(document).ready(function () {
 
-        //subscriptionsModule.initialize();
+        subscriptionsModule.initialize();
         videoPlayerModule.initialize();
-        socialModule.initialize();
+        socialModule.initialize();        
         adsModule.initialize();
         donationsModule.initialize();
 

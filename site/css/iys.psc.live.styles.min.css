@@ -33,13 +33,26 @@ body{min-width:320px;text-align:center;}
 #tw-widget .twitter-timeline{display:block!important;width:100%!important;}
 #donations .donations-form-container{margin-top:14px;}
 #donations .amount-btn{display:block;margin:10px 0;padding:7px 0;border:solid 1px #777;font-size:16px;color:#555;}
-#donations .amount-btn:hover,#donations .amount-btn:focus,#donations .amount-btn:active,#donations .amount-btn.selected,#donate-btn{border-color:#e91c23;background:#e91c23;text-decoration:none;color:#fff;}
-#donate-btn{width:100%;margin:20px 0 0;padding:8px 22px;border:0;-webkit-appearance:none;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;font-size:16px;}
-#donate-btn:hover,#donate-btn:focus,#donate-btn:active{background:#454545;}
+#donations .amount-btn:hover,#donations .amount-btn:focus,#donations .amount-btn:active,#donations .amount-btn.selected{border-color:#e91c23;background:#e91c23;text-decoration:none;color:#fff;}
+#donate-btn{width:100%;margin:20px 0 0;padding:7px 22px;font-size:16px;font-weight:600;}
+#donate-btn:hover,#donate-btn:focus,#donate-btn:active{border-color:#454545;background:#454545;}
 #donation-amount{display:inline-block;width:40%;margin:0 8px 0 4px;padding:0;border:0;border-bottom:solid 1px #777;-webkit-appearance:none;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;background:0;}
 #donation-amount:focus,#donation-amount:hover,#donation-amount:active{outline:0;}
 .amount-btn:hover #donation-amount,.amount-btn:focus #donation-amount,.amount-btn:active #donation-amount,.amount-btn.selected #donation-amount{border-bottom-color:#fff;color:#fff;}
 #donations-form-alert{display:none;margin:10px 0;}
+#subscriptions{position:relative;max-width:380px;margin:0 auto;padding:6% 20px;text-align:left;color:#333;}
+#subscriptions .psc-logo{width:280px;height:103px;margin:0;background-image:url(../img/psc-logo.png);text-indent:-9999px;}
+#subscriptions .subscriptions-info{margin:0 0 0 70px;text-align:left;font-size:20px;font-weight:300;color:#212121;}
+#subscriptions .subscriptions-info em{font-style:normal;font-weight:400;}
+#sign-up-form{margin:20px 0 0;}
+#sign-up-form label{font-weight:400;}
+#sign-up-form .form-control{height:36px;padding-top:6px;padding-bottom:10px;font-size:inherit;}
+#sign-up-form .highlighted label{font-weight:600;}
+#sign-up-form .optional label{font-weight:300;}
+#sign-up-form .form-btn-group .btn{width:100%;padding:8px 22px;font-size:16px;font-weight:600;margin-top:20px;}
+#sign-up-form .form-btn-group .btn+.btn{margin-top:10px;}
+.btn.btn-borderless{border:0;font-weight:600;}
+#subscriptions-form-alert{display:none;text-align:center;}
 footer{position:relative;padding:88px 20px 16px;background-color:#333;background-image:url(../img/footer-theme-logo.png);background-position:center 56px;background-repeat:no-repeat;font-size:12px;color:#fff;}
 footer p{margin:0;}
 footer .social-contacts{position:absolute;top:0;left:0;right:0;height:36px;background:#fff;}
@@ -53,7 +66,7 @@ footer .social-contacts a:hover,footer .social-contacts a:focus,footer .social-c
 #tw-widget{max-width:296px;}
 #donations .donations-form-container,#donate-btn{width:306px;}
 }
-@media (min-width: 768px){#content>section>p{font-size:16px;}
+@media (min-width: 768px){body{font-size:16px;}
 #content .section{padding:0;}
 #main .main-logo{margin-top:67px;margin-bottom:66px;}
 #video-container,#random-ads{width:620px;}
@@ -66,8 +79,14 @@ footer .social-contacts a:hover,footer .social-contacts a:focus,footer .social-c
 #content .static-ads .ad img{width:100%;}
 #tw-widget{max-width:430px;}
 #donations .donations-form-container{width:424px;}
-#donate-btn,#donations .amount-btn{font-size:18px;}
+#donate-btn,#donations .amount-btn,#sign-up-form .form-btn-group .btn{font-size:18px;}
 #donate-btn{width:auto;}
+#subscriptions{max-width:620px;}
+#subscriptions .psc-logo{width:462px;height:170px;background-image:url(../img/psc-logo-lg.png);}
+#subscriptions .subscriptions-info{margin:0 0 0 114px;font-size:28px;}
+#subscriptions .form-horizontal .control-label{margin-bottom:5px;}
+#sign-up-form{max-width:412px;margin-left:114px;}
+#sign-up-form .form-control{height:40px;}
 }
 @media (min-width: 992px){#content>section+section,#content>.section+section,#content .section,#random-ads.section,#content #social{margin-bottom:50px;}
 #content>section>.section-heading{font-size:48px;}
@@ -77,16 +96,28 @@ footer .social-contacts a:hover,footer .social-contacts a:focus,footer .social-c
 #tw-widget{max-width:540px;}
 #tw-widget .widget-heading{margin-bottom:14px;font-size:28px;}
 #tw-widget .widget-heading a:hover{background-position:184px center;}
+#subscriptions{max-width:680px;}
+#sign-up-form{max-width:466px;margin-left:114px;}
 }
-@media (min-width: 1200px){#content>section>p{max-width:1020px;font-size:20px;}
+@media (min-width: 1200px){body{font-size:20px;}
+#content>section>p{max-width:1020px;}
 #video-container,#random-ads{width:780px;}
 #video-container .video-player-watch-control p{font-size:16px;}
 #video-container .video-player-watch-control mark{height:22px;line-height:21px;font-size:16px;}
 #tw-widget{max-width:640px;}
 #donations{margin-bottom:60px!important;}
 #donations .donations-form-container{width:520px;margin-top:16px;}
-#donate-btn,#donations .amount-btn{font-size:20px;}
+#donate-btn,#donations .amount-btn,#sign-up-form .form-btn-group .btn{font-size:20px;}
 #donate-btn{margin:22px 0 0;}
+#subscriptions{max-width:726px;padding-top:4%;padding-bottom:4%;}
+#subscriptions .subscriptions-info{font-size:34px;}
+#subscriptions .form-horizontal{margin:46px 0 0;}
+#subscriptions .form-horizontal .control-label{margin-bottom:0;}
+#subscriptions .form-horizontal .multiline-label{padding-top:0;line-height:1.28;font-size:86%;}
+#sign-up-form{max-width:none;}
+#sign-up-form .form-group{margin-bottom:20px;}
+#sign-up-form .form-control{height:46px;}
+#sign-up-form .form-btn-group .btn{float:right;width:auto;margin:20px 0 0 20px!important;}
 footer{padding:92px 20px 16px;background-position:center 58px;font-size:13px;}
 }
 @media (min-width: 1400px){#main .main-logo a{width:424px;height:116px;margin-top:77px;margin-bottom:77px;background-image:url(../img/main-theme-logo-lg.png);}
@@ -103,10 +134,18 @@ only screen and (min-resolution: 192dpi),
 only screen and (min-resolution: 2dppx){#main .main-logo a{background-image:url(../img/@2x/main-theme-logo@2x.png);background-size:320px 91px;}
 #video-play-btn:after{background-image:url(../img/@2x/play-btn-icon@2x.png);background-size:60px;}
 #tw-widget .widget-heading a{background-image:url(../img/@2x/twitter-widget-icon@2x.png);background-size:32px 26px;}
+#subscriptions .psc-logo{background-image:url(../img/@2x/psc-logo@2x.png);background-size:280px 103px;}
 footer{background-image:url(../img/@2x/footer-theme-logo@2x.png);background-size:159px 22px;}
 .social-contacts .fb-link{background-image:url(../img/@2x/social-fb-icon@2x.png);background-size:8px 32px;}
 .social-contacts .tw-link{background-image:url(../img/@2x/social-tw-icon@2x.png);background-size:17px 32px;}
 .social-contacts .ig-link{background-image:url(../img/@2x/social-ig-icon@2x.png);background-size:16px 32px;}
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 768px),
+only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 768px),
+only screen and (-o-min-device-pixel-ratio: 2/1) and (min-width: 768px),
+only screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
+only screen and (min-resolution: 192dpi) and (min-width: 768px),
+only screen and (min-resolution: 2dppx) and (min-width: 768px){#subscriptions .psc-logo{background-image:url(../img/@2x/psc-logo-lg@2x.png);background-size:462px 170px;}
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 1400px),
 only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 1400px),
