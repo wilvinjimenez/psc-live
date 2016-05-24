@@ -1,10 +1,10 @@
 'use strict';
 
-var common = (function(window, document) {
+var common = (function (window, document) {
 
     var commonObj = {};
 
-    commonObj.getTimestamp = function() {
+    commonObj.getTimestamp = function () {
 
         var currentdate = new Date(),
             timestamp = currentdate.getDate() + '' + (currentdate.getMonth() + 1) + '' + currentdate.getFullYear() + '' + currentdate.getHours() + '' + currentdate.getMinutes() + '' + currentdate.getSeconds();
@@ -13,14 +13,14 @@ var common = (function(window, document) {
 
     },
 
-        commonObj.getContextProtocol = function() {
+        commonObj.getContextProtocol = function () {
 
             var protocol = /^http:/.test(document.location) ? 'http' : 'https';
             return protocol;
 
         },
 
-        commonObj.loadScript = function(id, url) {
+        commonObj.loadScript = function (id, url) {
 
             var s = 'script',
                 js = document.createElement(s),
@@ -34,7 +34,7 @@ var common = (function(window, document) {
         },
 
         //Fisher–Yates Shuffle.
-        commonObj.shuffle = function(array) {
+        commonObj.shuffle = function (array) {
 
             var i = array.length,
                 j = 0,
@@ -55,14 +55,14 @@ var common = (function(window, document) {
 
         },
 
-        commonObj.setCookie = function(cName, cValue, exDate) {
+        commonObj.setCookie = function (cName, cValue, exDate) {
 
             var expiryDate = 'expires=' + new Date(exDate).toUTCString();
             document.cookie = cName + '=' + cValue + '; ' + expiryDate + '; path=/';
 
         },
 
-        commonObj.getCookie = function(cName) {
+        commonObj.getCookie = function (cName) {
 
             var name = cName + '=',
                 ca = document.cookie.split(';');
@@ -83,13 +83,13 @@ var common = (function(window, document) {
 
         },
 
-        commonObj.deleteCookie = function(cName) {
+        commonObj.deleteCookie = function (cName) {
 
             this.setCookie(cName, '', -1);
 
         },
 
-        commonObj.probablyIsMobile = function() {
+        commonObj.probablyIsMobile = function () {
 
             var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
                 isACommonMobileOS = (window.navigator.userAgent.match(/iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i)) ? true : false;

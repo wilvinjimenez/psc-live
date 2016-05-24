@@ -11,8 +11,8 @@ module.exports = function (grunt) {
 
         uglify: {
             options: {
-                beutify: true,
-                mangle: false,
+                //beutify: true,
+                //mangle: false,
                 banner: '<%= banner %>' + '\n'
             },
             build: {
@@ -46,16 +46,16 @@ module.exports = function (grunt) {
                 tasks: ['cssc']
             }
         },
-        
-        'http-server':{
-            'dev' : {
+
+        'http-server': {
+            'dev': {
                 port: 7000,
                 root: 'site'
             }
         }
 
     });
-    
+
     grunt.registerTask('default', []);
 
 };

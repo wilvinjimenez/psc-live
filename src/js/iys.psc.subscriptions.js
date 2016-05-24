@@ -13,11 +13,13 @@ var subscriptionsModule = (function (window, document) {
         $newsletterYes,
         $newsletterNo,
         signUpFormIsValid,
-        $formErrorMessage;
+        $formErrorMessage,
+
+        SUBSCRIPTION_COOKIE_NAME = 'WC_SC',
+        SUBSCRIPTION_COOKIE_CONFIRMED = 'CONFIRMED',
+        SUBSCRIPTION_COOKIE_UNCONFIRMED = 'UNCONFIRMED';
 
     subscriptionsModuleObj.initialize = function () {
-
-        signUpFormIsValid = true;
 
         $subscriptionModal = $('#subscription-modal'),
             $firstName = $('#first-name'),
@@ -30,56 +32,87 @@ var subscriptionsModule = (function (window, document) {
             $newsletterNo = $('#newsletter-no'),
             $formErrorMessage = $('#subscriptions-form-alert');
 
-            $subscriptionModal.on('show.bs.modal hidden.bs.modal', function (e) {
-                $(document.body).toggleClass('solid-blank');
+        $subscriptionModal.on('show.bs.modal hidden.bs.modal', function (e) {
+            $(document.body).toggleClass('solid-blank');
+        });
+
+        if (common.getCookie(SUBSCRIPTION_COOKIE_NAME) === '') {
+
+            $subscriptionModal.modal({
+                show: true,
+                backdrop: 'static',
+                keyboard: false
             });
 
-        $subscriptionModal.modal({
-            show: true,
-            backdrop: 'static',
-            keyboard: false
-        });
+        }
 
         $('#btn-subscribe-later').on('click', function (e) {
 
             e.preventDefault();
             $subscriptionModal.modal('hide');
 
+            var expiryDate = new Date();
+            expiryDate.setHours(expiryDate.getHours() + 1);
+
+            common.setCookie(SUBSCRIPTION_COOKIE_NAME, SUBSCRIPTION_COOKIE_UNCONFIRMED, expiryDate);
+
         });
 
         $('#sign-up-form').on('submit', function () {
 
-            var requiredFields = [$firstName, $lastName, $emailAddress, $countryName, $broadcastPeopleAmount],
-                textFields = [$firstName, $lastName, $churchName],
-                numericFields = [$broadcastPeopleAmount],
-                emailFields = [$emailAddress];
-
-            validateRequiredFields(requiredFields);
-            validateTextField(textFields);
-            validateNumericField(numericFields);
-            validateEmailField(emailFields);
+            signUpFormIsValid = true;
+            validateFormFields();
 
             if (!signUpFormIsValid) {
+
+                var signUpFormErrorMessageAdvice;
+                window.clearTimeout(signUpFormErrorMessageAdvice);
+
                 $formErrorMessage.fadeIn();
+
+                signUpFormErrorMessageAdvice = window.setTimeout(function () {
+
+                    $formErrorMessage.fadeOut();
+
+                }, 5000);
+
+            }
+
+            else {
+
+                var expiryDate = new Date();
+                expiryDate.setTime(expiryDate.getTime() + (24 * 60 * 60 * 1000));
+                expiryDate.setHours(9);
+                expiryDate.setMinutes(0);
+                expiryDate.setSeconds(0);
+
+                common.setCookie(SUBSCRIPTION_COOKIE_NAME, SUBSCRIPTION_COOKIE_CONFIRMED, expiryDate);
+
             }
 
             return signUpFormIsValid;
 
+        }).find('.form-control').on('focus', function () {
+
+            $(this).closest('.form-group').removeClass('has-error').siblings('.field-error').text(null);
+
         });
 
-        var expiryDate = new Date();
-        expiryDate.setTime(expiryDate.getTime() + (24 * 60 * 60 * 1000));
-        expiryDate.setHours(9);
-        expiryDate.setMinutes(0);
-        expiryDate.setSeconds(0);
-
-        var expiryUTCDate = expiryDate.toUTCString();
-
-        var subscriptionCookie = 'WC_SC=CONFIRMED; expires=' + expiryUTCDate + '; path=/';
-
-        expiryDate.setHours(expiryDate.getHours() + 1);
-
     };
+
+    function validateFormFields() {
+
+        var requiredFields = [$firstName, $lastName, $emailAddress, $countryName, $broadcastPeopleAmount],
+            textFields = [$firstName, $lastName, $churchName],
+            numericFields = [$broadcastPeopleAmount],
+            emailFields = [$emailAddress];
+
+        validateRequiredFields(requiredFields);
+        validateTextField(textFields);
+        validateNumericField(numericFields);
+        validateEmailField(emailFields);
+
+    }
 
     function validateRequiredFields(fields) {
 
@@ -88,7 +121,7 @@ var subscriptionsModule = (function (window, document) {
             if (this.val() === '') {
 
                 signUpFormIsValid = false;
-                this.closest('.form-group').addClass('has-error');
+                this.closest('.form-group').addClass('has-error').find('.field-error').text('Debes llenar este campo correctamente.');
 
             }
 
@@ -105,7 +138,7 @@ var subscriptionsModule = (function (window, document) {
             if (!regEx.test(this.val())) {
 
                 signUpFormIsValid = false;
-                this.closest('.form-group').addClass('has-error');
+                this.closest('.form-group').addClass('has-error').find('.field-error').text('Formato de e-mail incorrecto.');
 
             }
 
@@ -122,7 +155,7 @@ var subscriptionsModule = (function (window, document) {
             if ($.isNumeric(fieldValue) && fieldValue !== '') {
 
                 signUpFormIsValid = false;
-                this.closest('.form-group').addClass('has-error');
+                this.closest('.form-group').addClass('has-error').find('.field-error').text('Este es un campo de texto.');
 
             }
 
@@ -137,10 +170,10 @@ var subscriptionsModule = (function (window, document) {
 
             var fieldValue = this.val();
 
-            if ($.isNumeric(fieldValue) && fieldValue !== '') {
+            if (!$.isNumeric(fieldValue) && fieldValue !== '') {
 
                 signUpFormIsValid = false;
-                this.closest('.form-group').addClass('has-error');
+                this.closest('.form-group').addClass('has-error').find('.field-error').text('Debes ingresar un n&iacute;mero.');
 
             }
 

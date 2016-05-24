@@ -377,7 +377,7 @@ body {
 #sign-up-form .form-control {
     height: 36px;
     padding-top: 6px;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
     font-size: inherit;
 }
 
@@ -411,7 +411,19 @@ body {
 
 #subscriptions-form-alert {
     display: none;
+    margin-top: 20px;
     text-align: center;
+}
+
+.field-error {
+    display: none;
+    margin: 4px 0 0;
+    font-weight: 600;
+    color: #a94442;
+}
+
+.has-error .field-error {
+    display: block;
 }
 
 /* Footer */

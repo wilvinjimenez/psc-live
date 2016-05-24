@@ -54,32 +54,36 @@
                 <p class="subscriptions-info"><em>La Iglesia Prevalecerá PSC'16</em>. Morbi mollis felis eget neque finibus, eget mattis metus.
                 </p>
             </div>
-            <form id="sign-up-form" action="http://integridadysabiduria.us10.list-manage.com/subscribe/post" method="post" target="_blank"
-                class="form-horizontal" novalidate>
+            <form id="sign-up-form" action="http://integridadysabiduria.us10.list-manage.com/subscribe/post" method="post" class="form-horizontal"
+                novalidate>
                 <input type="hidden" name="u" value="968f8c742a9070543f41e4e79">
                 <input type="hidden" name="id" value="140fb1feaa">
                 <div class="form-group">
                     <label for="first-name" class="col-lg-4 control-label">Nombres</label>
                     <div class="col-lg-8">
                         <input type="text" name="MERGE1" id="first-name" class="form-control">
+                        <small class="field-error" role="alert"></small>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="last-name" class="col-lg-4 control-label">Apellidos</label>
                     <div class="col-lg-8">
                         <input type="text" name="MERGE2" id="last-name" class="form-control">
+                        <small class="field-error" role="alert"></small>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="email-address" class="col-lg-4 control-label">Email</label>
                     <div class="col-lg-8">
                         <input type="email" name="MERGE0" id="email-address" class="form-control">
+                        <small class="field-error" role="alert"></small>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="church-name" class="col-lg-4 control-label optional">Iglesia</label>
                     <div class="col-lg-8">
                         <input type="text" name="MERGE3" id="church-name" class="form-control" placeholder="(opcional)">
+                        <small class="field-error" role="alert"></small>
                     </div>
                 </div>
                 <div class="form-group">
@@ -337,13 +341,16 @@
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
                         </select>
+                        <small class="field-error" role="alert"></small>
                     </div>
                 </div>
                 <br>
                 <div class="form-group highlighted">
                     <label for="webcast-people-amount" class="col-lg-4 control-label multiline-label">Cantidad de participantes en la transmisi&oacute;n</label>
-                    <div class="col-lg-8"><input type="number" name="MERGE5" size="7" id="broadcast-people-amount" class="form-control" min="1"
-                            autocomplete="off"></div>
+                    <div class="col-lg-8">
+                        <input type="number" name="MERGE5" size="7" id="broadcast-people-amount" class="form-control" min="1" autocomplete="off">
+                        <small class="field-error" role="alert"></small>
+                    </div>
                 </div>
                 <div class="form-group">
                     <div class="col-lg-offset-4 col-lg-8">
