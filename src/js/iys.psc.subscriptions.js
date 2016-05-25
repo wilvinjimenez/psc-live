@@ -33,7 +33,11 @@ var subscriptionsModule = (function (window, document) {
             $formErrorMessage = $('#subscriptions-form-alert');
 
         $subscriptionModal.on('show.bs.modal hidden.bs.modal', function (e) {
+
             $(document.body).toggleClass('solid-blank');
+            $('#content').toggle();
+            $('footer').toggle();
+
         });
 
         if (common.getCookie(SUBSCRIPTION_COOKIE_NAME) === '') {

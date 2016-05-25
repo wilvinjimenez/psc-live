@@ -61,28 +61,28 @@
                 <div class="form-group">
                     <label for="first-name" class="col-lg-4 control-label">Nombres</label>
                     <div class="col-lg-8">
-                        <input type="text" name="MERGE1" id="first-name" class="form-control">
+                        <input type="text" name="MERGE1" id="first-name" class="form-control" autocomplete="off">
                         <small class="field-error" role="alert"></small>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="last-name" class="col-lg-4 control-label">Apellidos</label>
                     <div class="col-lg-8">
-                        <input type="text" name="MERGE2" id="last-name" class="form-control">
+                        <input type="text" name="MERGE2" id="last-name" class="form-control" autocomplete="off">
                         <small class="field-error" role="alert"></small>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="email-address" class="col-lg-4 control-label">Email</label>
                     <div class="col-lg-8">
-                        <input type="email" name="MERGE0" id="email-address" class="form-control">
+                        <input type="email" name="MERGE0" id="email-address" class="form-control" autocomplete="off">
                         <small class="field-error" role="alert"></small>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="church-name" class="col-lg-4 control-label optional">Iglesia</label>
                     <div class="col-lg-8">
-                        <input type="text" name="MERGE3" id="church-name" class="form-control" placeholder="(opcional)">
+                        <input type="text" name="MERGE3" id="church-name" class="form-control" placeholder="(opcional)" autocomplete="off">
                         <small class="field-error" role="alert"></small>
                     </div>
                 </div>
@@ -348,7 +348,7 @@
                 <div class="form-group highlighted">
                     <label for="webcast-people-amount" class="col-lg-4 control-label multiline-label">Cantidad de participantes en la transmisi&oacute;n</label>
                     <div class="col-lg-8">
-                        <input type="number" name="MERGE5" size="7" id="webcast-people-amount" class="form-control" min="1" autocomplete="off">
+                        <input type="number" name="MERGE5" size="7" id="webcast-people-amount" class="form-control" pattern="[0-9]*" min="1" autocomplete="off">
                         <small class="field-error" role="alert"></small>
                     </div>
                 </div>
@@ -390,12 +390,18 @@
                             <a id="donate-btn-shortcut" href="#donations" class="btn btn-default btn-borderless">DONAR</a>
                         </div>
                     </div>
+                    <div id="language-selection">
+                        <h4>Selecciona tu idioma <b>&nbsp;/&nbsp;</b> Select your language</h4>
+                        <a id="language-btn-es" href="#" role="button">Espa&ntilde;ol</a>
+                        <a id="language-btn-en" href="#" role="button">English</a>
+                    </div>
                 </div>
                 <div class="video-wrapper">
                     <div class="embed-responsive embed-responsive-16by9">
                         <div id="yt-video" class="embed-responsive-item"></div>
                     </div>
-                    <input id="video-id" type="hidden" value="TMFZhwz81FE">
+                    <input id="video-es" type="hidden" value="TMFZhwz81FE">
+                    <input id="video-en" type="hidden" value="TOrLk_p3cys">
                 </div>
             </div>
         </section>
@@ -498,7 +504,7 @@
                 tambi&eacute;n?
             </p>
             <div class="donations-form-container center-block">
-                <form id="donations-form" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                <form id="donations-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" novalidate>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="row">

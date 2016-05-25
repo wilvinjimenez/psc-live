@@ -115,7 +115,9 @@ body {
 
 #player-alert-message {
     display: none;
-    position: relative;
+    position: absolute;
+    left: 0;
+    right: 0;
     margin: 18px 0 0;
     padding: 0 20px;
     z-index: 4;
@@ -188,6 +190,38 @@ body {
     font-size: 12px;    
     font-style: italic;    
     color: #fff;
+}
+
+#language-selection {
+    display: none;
+    position: relative;
+    height: 58px;
+    top: 50%;
+    margin: -29px 0 0; 
+    z-index: 4;
+    color: #d5d5d5;
+}
+
+#language-selection h4 {
+    font-family: 'PT Serif',serif;
+    margin: 0 0 10px;
+    font-size: 12px;
+}
+
+#language-selection a {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 7px 22px;
+    font-weight: 600;
+    color: #fff;
+}
+
+#language-selection a:hover,
+#language-selection a:focus,
+#language-selection a:active {
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
 }
 
 /* Ads section */
@@ -287,7 +321,6 @@ body {
 
 #donate-btn,
 #goto-donations-btn-shortcut {
-    width: 100%;
     margin: 20px 0 0;
     padding: 7px 22px;
     font-size: 16px;
@@ -442,6 +475,13 @@ body {
     display: block;
 }
 
+.solid-blank .modal-backdrop.in {
+    background-color: #fff;
+    -moz-opacity: 1;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
 /* Footer */
 
 footer {
@@ -494,11 +534,4 @@ footer .social-contacts a:active {
 
 .social-contacts .ig-link {
     background-image: url(../img/social-ig-icon.png);
-}
-
-.solid-blank .modal-backdrop.in {
-    background-color: #fff;
-    -moz-opacity: 1;
-    opacity: 1;
-    filter: alpha(opacity=100);
 }

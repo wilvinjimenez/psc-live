@@ -9,7 +9,8 @@ var videoPlayerModule = (function (window, document) {
         $playerAlert,
         player,
         playerState,
-        probablyIsMobile;
+        probablyIsMobile,
+        $languageSelection;
 
     videoPlayerModuleObj.initialize = function () {
 
@@ -18,7 +19,8 @@ var videoPlayerModule = (function (window, document) {
         $main = $('#main'),
             $videoContainer = $('#video-container'),
             $videoThumbnail = $videoContainer.find('.video-thumbnail'),
-            $playerAlert = $('#player-alert-message');
+            $playerAlert = $('#player-alert-message'),
+            $languageSelection = $('#language-selection');
 
         setThumbnailVideoPreviewImage();
 
@@ -29,7 +31,22 @@ var videoPlayerModule = (function (window, document) {
         $('#video-play-btn').on('click', function (e) {
 
             e.preventDefault();
-            loadPlayer();
+            $languageSelection.fadeIn(400);
+            $videoContainer.find('.video-player-watch-control').fadeOut(400);
+
+        });
+
+        $('#language-btn-es').on('click', function (e) {
+
+            e.preventDefault();
+            loadPlayer('es', $('#video-es').val());
+
+        });
+
+        $('#language-btn-en').on('click', function (e) {
+
+            e.preventDefault();
+            loadPlayer('en', $('#video-en').val());
 
         });
 
@@ -42,18 +59,18 @@ var videoPlayerModule = (function (window, document) {
 
     }
 
-    function loadPlayer() {
+    function loadPlayer(lang, vId) {
 
         loadPlayerApi();
 
         window.onYouTubeIframeAPIReady = function () {
 
             player = new YT.Player('yt-video', {
-                videoId: $('#video-id').val(),
+                videoId: vId,
                 playerVars: {
                     enablejsapi: 1,
                     rel: 0,
-                    hl: "es",
+                    hl: lang,
                     modestbranding: 1,
                     origin: document.domain
                 },
@@ -67,8 +84,8 @@ var videoPlayerModule = (function (window, document) {
 
         }
 
-        showPlayerAlert('Espere un momento por favor.');
-        $videoContainer.find('.video-player-watch-control').fadeOut(400);
+        showPlayerAlert('<b>Espere un momento por favor.</b><br>Wait a moment please.');
+        $languageSelection.fadeOut(400);
 
     }
 
@@ -122,7 +139,7 @@ var videoPlayerModule = (function (window, document) {
 
     function onPlayerError(event) {
 
-        showPlayerAlert('Ha ocurrido un error cargando la transmisi&oacute;n en vivo. Favor intente m&aacute;s tarde. (Error: ' + event.data + ')');
+        showPlayerAlert('<b>Ha ocurrido un error cargando la transmisi&oacute;n en vivo. Favor intente m&aacute;s tarde.</b><br>An error has occurred loading the live broadcast. Please try again later.<br><b>(Error: ' + event.data + '-PSC)</b>');
 
     }
 
