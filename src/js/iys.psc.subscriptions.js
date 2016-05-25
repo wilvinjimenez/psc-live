@@ -125,7 +125,7 @@ var subscriptionsModule = (function (window, document) {
             if (this.val() === '') {
 
                 signUpFormIsValid = false;
-                this.closest('.form-group').addClass('has-error').find('.field-error').text('Debes llenar este campo correctamente.');
+                this.closest('.form-group').addClass('has-error').find('.field-error').html('Debes llenar este campo correctamente.');
 
             }
 
@@ -142,7 +142,7 @@ var subscriptionsModule = (function (window, document) {
             if (!regEx.test(this.val())) {
 
                 signUpFormIsValid = false;
-                this.closest('.form-group').addClass('has-error').find('.field-error').text('Formato de e-mail incorrecto.');
+                this.closest('.form-group').addClass('has-error').find('.field-error').html('Formato de e-mail incorrecto.');
 
             }
 
@@ -159,7 +159,7 @@ var subscriptionsModule = (function (window, document) {
             if ($.isNumeric(fieldValue) && fieldValue !== '') {
 
                 signUpFormIsValid = false;
-                this.closest('.form-group').addClass('has-error').find('.field-error').text('Este es un campo de texto.');
+                this.closest('.form-group').addClass('has-error').find('.field-error').html('Este es un campo de texto.');
 
             }
 
@@ -174,10 +174,10 @@ var subscriptionsModule = (function (window, document) {
 
             var fieldValue = this.val();
 
-            if (!$.isNumeric(fieldValue) && fieldValue !== '') {
+            if ((!$.isNumeric(fieldValue) || fieldValue < 1 || fieldValue != ~~fieldValue) && fieldValue !== '') {
 
                 signUpFormIsValid = false;
-                this.closest('.form-group').addClass('has-error').find('.field-error').text('Debes ingresar un n&iacute;mero.');
+                this.closest('.form-group').addClass('has-error').find('.field-error').html('Debes ingresar un n&uacute;mero entero mayor que 0.');
 
             }
 
