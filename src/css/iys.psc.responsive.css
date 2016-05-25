@@ -15,7 +15,8 @@
     /* Donations section */
 
     #donations .donations-form-container,
-    #donate-btn {
+    #donate-btn,
+    #goto-donations-btn-shortcut {
         width: 306px;
     }
     
@@ -44,8 +45,8 @@
     }
     
     #video-container .video-player-watch-control {
-        height: 164px;
-        margin-top: -82px;
+        height: 276px;
+        margin-top: -138px;
     }    
     
     #video-play-btn {
@@ -63,6 +64,37 @@
         padding: 0 4px;
         line-height: 18px;
         font-size: 14px;    
+    }
+    
+    #video-container .donations-shortcut {
+        display: block;
+    }
+
+    #video-container .donations-shortcut .text-divider {
+        position: relative;
+        margin: 7px 0;
+    }
+
+    #video-container .donations-shortcut .text-divider::before,
+    #video-container .donations-shortcut .text-divider::after {    
+        content: "\00a0";
+        position: absolute;
+        left: 30px;
+        top: 50%;    
+        width: 76px;
+        height: 1px;
+        background: #fff;
+    }
+
+    #video-container .donations-shortcut .text-divider::after {
+        left: inherit; 
+        right: 30px;
+    }
+
+    #donate-btn-shortcut {
+        margin: 10px 0 0;
+        padding: 7px 22px;
+        font-size: 18px;    
     }
     
     /* Ads section */
@@ -351,7 +383,7 @@ only screen and (min-resolution: 2dppx) {
         background-size: 320px 91px;
     }
     
-    #video-play-btn:after {
+    #video-play-btn::after {
         background-image: url(../img/@2x/play-btn-icon@2x.png);
         background-size: 60px;
     }

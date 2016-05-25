@@ -23,7 +23,7 @@ body {
     max-width: 760px;
 }
 
-#content > section > .section-heading:after {
+#content > section > .section-heading::after {
     content: "\00a0";
     position: absolute;
     bottom: 0;
@@ -93,7 +93,7 @@ body {
     background-size: 100%;
 }
 
-#video-container .video-thumbnail:before {
+#video-container .video-thumbnail::before {
     content: "\00a0";
     position: absolute;
     top: 0;
@@ -107,7 +107,7 @@ body {
     opacity: .70;
 }
 
-#video-container .video-thumbnail.active:before {
+#video-container .video-thumbnail.active::before {
     -moz-opacity: .80;
     filter: alpha(opacity=80);
     opacity: .80;
@@ -150,7 +150,7 @@ body {
     color: #d5d5d5;
 }
 
-#video-play-btn:after {
+#video-play-btn::after {
     content: "\00a0";
     position: absolute;
     top: 0;
@@ -163,9 +163,9 @@ body {
     background-repeat: no-repeat;
 }
 
-#video-play-btn:hover:after,
-#video-play-btn:focus:after,
-#video-play-btn:active:after {
+#video-play-btn:hover::after,
+#video-play-btn:focus::after,
+#video-play-btn:active::after {
     -moz-opacity: .90;
     filter: alpha(opacity=90);
     opacity: .90;
@@ -285,7 +285,8 @@ body {
     color: #fff;
 }
 
-#donate-btn {
+#donate-btn,
+#goto-donations-btn-shortcut {
     width: 100%;
     margin: 20px 0 0;
     padding: 7px 22px;
@@ -295,7 +296,10 @@ body {
 
 #donate-btn:hover,
 #donate-btn:focus,
-#donate-btn:active {
+#donate-btn:active,
+#goto-donations-btn-shortcut:hover,
+#goto-donations-btn-shortcut:focus,
+#goto-donations-btn-shortcut:active {
     border-color: #454545;
     background: #454545;
 }
@@ -331,6 +335,18 @@ body {
 #donations-form-alert {
     display: none;
     margin: 10px 0;
+}
+
+.donations-info-shortcut h3 {
+    margin: 0;
+    line-height: 1.3;  
+    font-size: 22px;
+    font-weight: 300;
+    color: #555;
+}
+
+#goto-donations-btn-shortcut {
+    margin-top: 10px;
 }
 
 /* Subscriptions section */
