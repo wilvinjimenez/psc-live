@@ -86,7 +86,7 @@ var subscriptionsModule = (function (window, document) {
 
                 var expiryDate = new Date();
                 expiryDate.setTime(expiryDate.getTime() + (24 * 60 * 60 * 1000));
-                expiryDate.setHours(9);
+                expiryDate.setHours(8);
                 expiryDate.setMinutes(0);
                 expiryDate.setSeconds(0);
 
