@@ -15,7 +15,7 @@ var subscriptionsModule = (function (window, document) {
         signUpFormIsValid,
         $formErrorMessage,
 
-        SUBSCRIPTION_COOKIE_NAME = 'WC_SC',
+        SUBSCRIPTION_COOKIE_NAME = 'WC_SC3',
         SUBSCRIPTION_COOKIE_CONFIRMED = 'CONFIRMED',
         SUBSCRIPTION_COOKIE_UNCONFIRMED = 'UNCONFIRMED';
 
@@ -56,7 +56,7 @@ var subscriptionsModule = (function (window, document) {
             $subscriptionModal.modal('hide');
 
             var expiryDate = new Date();
-            expiryDate.setHours(expiryDate.getHours() + 1);
+            expiryDate.setHours(expiryDate.getHours() + 2);
 
             common.setCookie(SUBSCRIPTION_COOKIE_NAME, SUBSCRIPTION_COOKIE_UNCONFIRMED, expiryDate);
 
