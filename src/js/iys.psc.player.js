@@ -86,7 +86,6 @@ var videoPlayerModule = (function (window, document) {
 
         showPlayerAlert('<b>Espere un momento por favor.</b><br>Wait a moment please.');
         $languageSelection.fadeOut(400);
-
     }
 
     function loadPlayerApi() {

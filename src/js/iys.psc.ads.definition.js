@@ -9,7 +9,7 @@ adsModule.adsDefinitionList = {
         adsList: [
             {
                 active: true,
-                image: 'ad-random-xeliter.jpg',
+                image: 'ad-random-1.jpg',
                 description: 'Xeliter Serviced Residences',
                 url: 'https://www.xeliter.com/es/portada',
                 target: '_blank'
@@ -48,7 +48,7 @@ adsModule.adsDefinitionList = {
         adsList: [
             {
                 active: true,
-                image: 'ad-static-xeliter.jpg',
+                image: 'ad-static-4.jpg',
                 description: 'Xeliter Serviced Residences',
                 url: 'https://www.xeliter.com/es/portada',
                 target: '_blank'
@@ -79,7 +79,7 @@ adsModule.adsDefinitionList = {
             },
 
             {
-                active: false,
+                active: true,
                 image: 'ad-static-5.jpg',
                 description: 'Static ad description 5',
                 url: 'http://integridadysabiduria.org/',
@@ -87,7 +87,7 @@ adsModule.adsDefinitionList = {
             },
 
             {
-                active: false,
+                active: true,
                 image: 'ad-static-6.jpg',
                 description: 'Static ad description 6',
                 url: 'http://integridadysabiduria.org/',
@@ -95,7 +95,7 @@ adsModule.adsDefinitionList = {
             },
 
             {
-                active: false,
+                active: true,
                 image: 'ad-static-7.jpg',
                 description: 'Static ad description 7',
                 url: 'http://integridadysabiduria.org/',
@@ -103,7 +103,7 @@ adsModule.adsDefinitionList = {
             },
 
             {
-                active: false,
+                active: true,
                 image: 'ad-static-8.jpg',
                 description: 'Static ad description 8',
                 url: 'http://integridadysabiduria.org/',
