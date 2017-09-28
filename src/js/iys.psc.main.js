@@ -7,7 +7,6 @@
         subscriptionsModule.initialize();
         videoPlayerModule.initialize();
         socialModule.initialize();        
-        adsModule.initialize();
         donationsModule.initialize();
 
     });
