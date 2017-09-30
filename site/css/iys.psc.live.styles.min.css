@@ -1,3 +1,10 @@
+/*!
+ * Organization: MINISTERIOS INTEGRIDAD & SABIDURIA
+ * Theme: Conferencia Por Su Causa
+ * Version: 1.0.0
+ * UI/UX Designer and Developer: WILVIN JIMENEZ
+ * Last Updated: 29-09-2017
+*/
 body{min-width:320px;text-align:center;}
 #content>section+section,#content>.section+section,#content .section{margin-bottom:40px;padding:0 20px;}
 #content>section>.section-heading{position:relative;margin:0 0 26px;padding:0 0 16px;font-size:36px;font-weight:300;color:#555;}
