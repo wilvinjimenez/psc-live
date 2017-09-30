@@ -15,7 +15,7 @@ var subscriptionsModule = (function (window, document) {
         signUpFormIsValid,
         $formErrorMessage,
 
-        SUBSCRIPTION_COOKIE_NAME = 'WC_SC_PSC17_2',
+        SUBSCRIPTION_COOKIE_NAME = 'WC_SC_PSC17_3',
         SUBSCRIPTION_COOKIE_CONFIRMED = 'CONFIRMED',
         SUBSCRIPTION_COOKIE_UNCONFIRMED = 'UNCONFIRMED';
 
