@@ -349,7 +349,7 @@
     /* Main section */ 
         
     #main .main-logo a {
-        width: 540px;
+        width: 348px;
         height: 116px;
         margin-top: 77px;
         margin-bottom: 77px;
@@ -394,7 +394,7 @@ only screen and (min-resolution: 2dppx) {
     
     #main .main-logo a {
         background-image: url(../img/@2x/main-theme-logo@2x.png);
-        background-size: 425px 91px;
+        background-size: 275px 91px;
     }
     
     #video-play-btn::after {
@@ -469,7 +469,7 @@ only screen and (min-resolution: 2dppx) and (min-width: 1400px) {
     
     #main .main-logo a {
         background-image: url(../img/@2x/main-theme-logo-lg@2x.png);
-        background-size: 540px 116px;
+        background-size: 348px 116px;
     } 
 
 }
