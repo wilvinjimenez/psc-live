@@ -3,9 +3,10 @@ body {
     text-align: center;
 }
 
-#content > section + section,
-#content > .section + section,
+#content > section,
+#content > .section,
 #content .section {
+    margin-bottom: 20px;
     margin-bottom: 40px;
     padding: 0 20px;
 }
@@ -39,6 +40,7 @@ body {
 #main {
     position: relative;
     overflow: hidden;
+    margin-top: 0 !important;
     background: #000 url(../img/main-page-theme-bg.jpg) center no-repeat;
     background-size: cover;
 }
@@ -56,14 +58,14 @@ body {
 
 #main .main-logo {
     position: relative;
-    margin-top: 47px;
-    margin-bottom: 46px;   
+    margin-top: 35px;
+    margin-bottom: 35px;   
     z-index: 1;
 }
 
 #main .main-logo a {
-    width: 275px;
-    height: 91px;
+    width: 290px;
+    height: 79px;
     background-image: url(../img/main-theme-logo.png);
     background-position: center;
     background-repeat: no-repeat;
@@ -251,8 +253,13 @@ body {
 }
 
 #random-ads.section,
-#content #social {
+#social {
     margin-bottom: 20px;
+}
+
+#social {
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 /* Social section */
@@ -295,6 +302,11 @@ body {
 }
 
 /* Donations section */
+
+#donations {
+    margin-left: 15px;
+    margin-right: 15px;
+}
 
 #donations .donations-form-container {
     margin-top: 14px;

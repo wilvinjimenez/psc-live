@@ -35,8 +35,8 @@
     /* Main section */
     
     #main .main-logo {
-        margin-top: 67px;
-        margin-bottom: 66px;
+        margin-top: 50px;
+        margin-bottom: 50px;
     }
     
     #video-container,
@@ -174,11 +174,12 @@
 
 @media (min-width: 992px) {
     
-    #content > section + section,
-    #content > .section + section,
+    #content > section,
+    #content > .section,
     #content .section,
     #random-ads.section,
-    #content #social {
+    #social {
+        margin-top: 50px;
         margin-bottom: 50px;
     }
     
@@ -349,10 +350,10 @@
     /* Main section */ 
         
     #main .main-logo a {
-        width: 348px;
-        height: 116px;
-        margin-top: 77px;
-        margin-bottom: 77px;
+        width: 360px;
+        height: 98px;
+        margin-top: 50px;
+        margin-bottom: 50px;
         background-image: url(../img/main-theme-logo-lg.png);
     }  
 
@@ -394,7 +395,7 @@ only screen and (min-resolution: 2dppx) {
     
     #main .main-logo a {
         background-image: url(../img/@2x/main-theme-logo@2x.png);
-        background-size: 275px 91px;
+        background-size: 290px 79px;
     }
     
     #video-play-btn::after {
@@ -469,7 +470,7 @@ only screen and (min-resolution: 2dppx) and (min-width: 1400px) {
     
     #main .main-logo a {
         background-image: url(../img/@2x/main-theme-logo-lg@2x.png);
-        background-size: 348px 116px;
+        background-size: 360px 98px;
     } 
 
 }
