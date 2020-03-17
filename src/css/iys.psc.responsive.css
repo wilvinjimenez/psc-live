@@ -54,8 +54,7 @@
         font-size: 34px;
     }
 
-    #video-container .video-player-watch-control p,
-    #language-selection h4  {
+    #video-container .video-player-watch-control p {
         font-size: 14px;
     }
     
@@ -98,7 +97,7 @@
         font-size: 18px;    
     }
     
-    #language-selection {
+    #player-selection {
         height: 62px;
         margin: -31px 0 0; 
     }
@@ -249,7 +248,7 @@
     }
     
     #video-container .video-player-watch-control p,
-    #language-selection h4 {
+    #player-selection h4 {
         font-size: 16px;
     }
     
@@ -259,9 +258,14 @@
         font-size: 16px;    
     }
     
-    #language-selection {
+    #player-selection {
         height: 70px;
         margin: -25px 0 0; 
+    }
+
+    #player-selection a {
+        padding: 7px 22px;
+        font-size: 18px;
     }
     
     /* Social section */

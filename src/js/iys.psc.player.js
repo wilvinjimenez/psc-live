@@ -10,7 +10,7 @@ var videoPlayerModule = (function (window, document) {
         player,
         playerState,
         probablyIsMobile,
-        $languageSelection;
+        $playerSelection;
 
     videoPlayerModuleObj.initialize = function () {
 
@@ -20,7 +20,7 @@ var videoPlayerModule = (function (window, document) {
             $videoContainer = $('#video-container'),
             $videoThumbnail = $videoContainer.find('.video-thumbnail'),
             $playerAlert = $('#player-alert-message'),
-            $languageSelection = $('#language-selection');
+            $playerSelection = $('#player-selection');
 
         setThumbnailVideoPreviewImage();
 
@@ -31,22 +31,22 @@ var videoPlayerModule = (function (window, document) {
         $('#video-play-btn').on('click', function (e) {
 
             e.preventDefault();
-            $languageSelection.fadeIn(400);
+            $playerSelection.fadeIn(400);
             $videoContainer.find('.video-player-watch-control').fadeOut(400);
 
         });
 
-        $('#language-btn-es').on('click', function (e) {
+        $('#player-btn-1').on('click', function (e) {
 
             e.preventDefault();
-            loadPlayer('es', $('#video-es').val());
+            loadPlayer('es', $('#video-1').val());
 
         });
 
-        $('#language-btn-en').on('click', function (e) {
+        $('#player-btn-2').on('click', function (e) {
 
             e.preventDefault();
-            loadPlayer('en', $('#video-en').val());
+            loadPlayer('es', $('#video-2').val());
 
         });
 
@@ -84,8 +84,8 @@ var videoPlayerModule = (function (window, document) {
 
         }
 
-        showPlayerAlert('<b>Espere un momento por favor.</b><br>Wait a moment please.');
-        $languageSelection.fadeOut(400);
+        showPlayerAlert('<b>Espere un momento por favor.</b>');
+        $playerSelection.fadeOut(400);
     }
 
     function loadPlayerApi() {
